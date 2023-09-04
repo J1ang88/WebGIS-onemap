@@ -8,7 +8,7 @@
 # install dependencies
 npm install
 #总文件夹安vue的module，server安node的
-![image](https://github.com/J1ang88/WebGIS-onemap/assets/127932198/ef12427b-19b5-4d10-91c0-dac8f83e5554)
+用户名密码：![image](https://github.com/J1ang88/WebGIS-onemap/assets/127932198/ef12427b-19b5-4d10-91c0-dac8f83e5554)
 
 # serve with hot reload at localhost:8080
 npm run dev
