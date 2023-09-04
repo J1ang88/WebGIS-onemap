@@ -37,7 +37,7 @@ export default {
             } else {
                 this.axios({
                     method: 'post',
-                    url: 'http://127.0.0.1:3000/api/user/login',
+                    url: 'http://127.0.0.1:3002/api/user/login',
                     data: this.loginForm
                 }).then(res => {
                     console.log(res.data.status === 0);//false

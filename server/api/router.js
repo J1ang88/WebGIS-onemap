@@ -14,7 +14,7 @@ connection.connect();
 // 登录模块
 router.post('/login', (req, res) => {
     const user_login = req.body;
-    // console.log(req.body);
+     console.log(req.body);
     // 定义查询 sql
     const sel_uname_sql =  `select * from user_login where uname = '${user_login.uname}'`;
     connection.query(sel_uname_sql, (err, results) => {
@@ -40,6 +40,40 @@ router.post('/login', (req, res) => {
                 })
             }
         }
+    })
+})
+
+// 用户信息模块
+router.post('/user_data', (req, res) => {
+    const user = req.body;
+     console.log(req.body);
+    // 定义查询 sql
+    const sel_uname_sql =  `select * from user_login`;
+    connection.query(sel_uname_sql, (err, results) => {
+        if (err) throw err;
+         console.log(results);
+        if (results[0] === undefined) {
+            res.json({
+                status: '-1',
+                message: '读取失败！'
+            })
+        } else {
+           /*  if (results[0].uname === user_login.uname && results[0].upwd === user_login.upwd) {
+                const userToken = token.createToken(user_login); */
+                // const userToken = token.createToken(user);
+                res.json({
+                    status: '0',
+                    message: '读取成功！',
+                    tableData:results,
+                    // token: userToken
+                })
+            } /* else {
+                res.json({
+                    status: '1',
+                    message: '密码错误！'
+                })
+            } */
+        
     })
 })
 module.exports = router;

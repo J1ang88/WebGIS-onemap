@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 // 白名单 （免登录）
-const whiteList = ['/api/user/login', '/api/user/add'];
+const whiteList = ['/api/user/login', '/api/user/user_data'];
 
 app.use((req, res, next) => {
     if (!whiteList.includes(req.url)) {
@@ -27,6 +27,6 @@ app.use((req, res, next) => {
 
 app.use('/api/user', router);
 
-app.listen(3000, () => {
-    console.log('server running at http://127.0.0.1:3000');
+app.listen(3002, () => {
+    console.log('server running at http://127.0.0.1:3002');
 })
